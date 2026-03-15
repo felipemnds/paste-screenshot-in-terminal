@@ -34,7 +34,13 @@ FONT_MONO   = "Consolas"
 
 W, H        = 640, 420
 
-BASE_DIR    = Path(__file__).parent.parent
+import sys
+# When compiled with PyInstaller, use the .exe location; otherwise use __file__
+if getattr(sys, "frozen", False):
+    BASE_DIR = Path(sys.executable).parent
+else:
+    BASE_DIR = Path(__file__).parent.parent
+
 CONFIG_FILE = BASE_DIR / "config.ini"
 SCRIPT_MAIN = BASE_DIR / "src" / "paste-screenshot.ahk"
 
@@ -446,23 +452,26 @@ class Page3(BasePage):
         state["save_folder"] = self.folder_var.get()
         self._save_config()
         self._launch_script()
-        self.app.show_page(3)
+        # Give AHK 1.5s to initialize and register the hotkey before test page
+        self.app.after(1500, lambda: self.app.show_page(3))
 
     def _save_config(self):
-        cfg = configparser.ConfigParser()
-        cfg["Settings"] = {
-            "Hotkey":     state["key_combo"],
-            "SaveFolder": state["save_folder"],
-        }
         os.makedirs(state["save_folder"], exist_ok=True)
+        # Write manually to avoid configparser lowercasing keys and adding spaces
         with open(CONFIG_FILE, "w") as f:
-            cfg.write(f)
+            f.write("[Settings]\n")
+            f.write(f"Hotkey={state['key_combo']}\n")
+            f.write(f"SaveFolder={state['save_folder']}\n")
 
     def _launch_script(self):
         ahk = state["ahk_exe"]
         if ahk and SCRIPT_MAIN.exists():
-            subprocess.Popen([ahk, str(SCRIPT_MAIN)],
-                             creationflags=subprocess.DETACHED_PROCESS)
+            # Use shell=True to properly detach the AHK process
+            subprocess.Popen(
+                f'"{ahk}" "{SCRIPT_MAIN}"',
+                shell=True,
+                creationflags=subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP
+            )
 
 
 # ── Page 4: Test ──────────────────────────────────────────────────────────────
