@@ -6,3 +6,9 @@ config.ini
 
 # Research files
 .firecrawl/
+
+# Design references and media
+design-refs/
+*.mp4
+*.mov
+*.avi
