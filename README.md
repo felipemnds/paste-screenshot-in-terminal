@@ -2,7 +2,7 @@
 
 # paste-screenshot-in-terminal
 
-**Paste any clipboard image into your terminal as a file path — with a single hotkey.**
+**Paste any clipboard image into your terminal as a file path - with a single hotkey.**
 
 Built for [Claude Code](https://claude.ai/code) users and anyone who works with AI tools in the terminal.
 
@@ -20,7 +20,7 @@ Built for [Claude Code](https://claude.ai/code) users and anyone who works with 
 
 ## The problem
 
-Terminals don't accept images — only text. So every time you want to share a screenshot with Claude Code (or any AI tool running in your terminal), you have to:
+Terminals don't accept images - only text. So every time you want to share a screenshot with Claude Code (or any AI tool running in your terminal), you have to:
 
 1. Take a screenshot
 2. Find where it was saved
@@ -33,7 +33,7 @@ Terminals don't accept images — only text. So every time you want to share a s
 
 ## How it works
 
-1. Copy any image to your clipboard — screenshot, browser right-click, snipping tool, anything
+1. Copy any image to your clipboard - screenshot, browser right-click, snipping tool, anything
 2. Switch to your terminal
 3. Press **Ctrl+Shift+S** (or your custom hotkey)
 4. The image is saved automatically and its path is typed into your terminal
@@ -44,17 +44,17 @@ That's it. Works with **any terminal**: PowerShell, Windows Terminal, CMD, Git B
 
 ## Installation
 
-### Option 1 — Setup wizard (recommended)
+### Option 1 - Setup wizard (recommended)
 
 1. Download **`setup.exe`** from the [latest release](https://github.com/felipemnds/paste-screenshot-in-terminal/releases/latest)
-2. Run it — no installation required, just double-click
+2. Run it - no installation required, just double-click
 3. Follow the 4-step wizard:
    - Checks if AutoHotkey is installed (and guides you through installing it if not)
    - Lets you record your preferred hotkey by pressing it
    - Lets you choose where temporary images are saved
    - Runs a live test so you can confirm everything works
 
-### Option 2 — Manual setup
+### Option 2 - Manual setup
 
 **Prerequisites:** [AutoHotkey v2](https://www.autohotkey.com/) installed
 
@@ -73,12 +73,12 @@ SaveFolder=C:\Users\YourName\Documents\paste-screenshot-temp
 
 ## Features
 
-- **Works in any terminal** — PowerShell, Windows Terminal, CMD, Git Bash, Cmder, and more
-- **Any image source** — screenshots, browser images, snipping tool, clipboard from any app
-- **Interactive setup wizard** — no config files to edit manually
-- **Custom hotkey** — record your preferred shortcut by pressing it during setup
-- **Auto-start with Windows** — optional, configured during setup
-- **Lightweight** — a single AutoHotkey script, no background services
+- **Works in any terminal** - PowerShell, Windows Terminal, CMD, Git Bash, Cmder, and more
+- **Any image source** - screenshots, browser images, snipping tool, clipboard from any app
+- **Interactive setup wizard** - no config files to edit manually
+- **Custom hotkey** - record your preferred shortcut by pressing it during setup
+- **Auto-start with Windows** - optional, configured during setup
+- **Lightweight** - a single AutoHotkey script, no background services
 
 ---
 
@@ -87,7 +87,7 @@ SaveFolder=C:\Users\YourName\Documents\paste-screenshot-temp
 | Requirement | Details |
 |---|---|
 | OS | Windows 10 or Windows 11 |
-| AutoHotkey | v2 (free — [download here](https://www.autohotkey.com/)) |
+| AutoHotkey | v2 (free - [download here](https://www.autohotkey.com/)) |
 
 > **Note:** The `setup.exe` wizard runs without any dependencies. AutoHotkey is only needed to run the paste script itself.
 
@@ -148,7 +148,7 @@ To change the folder, re-run the setup wizard or edit `config.ini` directly.
 
 **Hotkey does not work**
 - Make sure `paste-screenshot.ahk` is running (check the system tray for the AutoHotkey icon)
-- Another app may be using the same hotkey — run the wizard again to choose a different one
+- Another app may be using the same hotkey - run the wizard again to choose a different one
 
 **"No image found in clipboard"**
 - The script only works when there is an actual image in the clipboard, not a file path or text

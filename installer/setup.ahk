@@ -2,7 +2,7 @@
 #SingleInstance Force
 
 ; ════════════════════════════════════════════════════════════
-;  paste-screenshot-in-terminal — Setup Wizard
+;  paste-screenshot-in-terminal - Setup Wizard
 ; ════════════════════════════════════════════════════════════
 
 global gKeyCombo    := "^+s"
@@ -16,12 +16,12 @@ global gCaptureBox  := ""
 ShowPage1()
 
 ; ══════════════════════════════════════════════════════════════
-;  PAGE 1 — Welcome + AutoHotkey check
+;  PAGE 1 - Welcome + AutoHotkey check
 ; ══════════════════════════════════════════════════════════════
 ShowPage1() {
     global gAhkExe
 
-    g := Gui("+AlwaysOnTop -Resize", "Setup — paste-screenshot-in-terminal")
+    g := Gui("+AlwaysOnTop -Resize", "Setup - paste-screenshot-in-terminal")
     g.SetFont("s10", "Segoe UI")
     g.BackColor := "FFFFFF"
     g.MarginX := 0
@@ -36,7 +36,7 @@ ShowPage1() {
 
     ; ── Body
     g.SetFont("s10 w600 c1a1a2e", "Segoe UI")
-    g.Add("Text", "x24 y90", "Step 1 of 4 — AutoHotkey")
+    g.Add("Text", "x24 y90", "Step 1 of 4 - AutoHotkey")
 
     g.SetFont("s10 w400 c333333", "Segoe UI")
     g.Add("Text", "x24 y115 w452", "This tool requires AutoHotkey v2 to run the paste script.")
@@ -74,12 +74,12 @@ ShowPage1() {
 }
 
 ; ══════════════════════════════════════════════════════════════
-;  PAGE 2 — Hotkey recorder
+;  PAGE 2 - Hotkey recorder
 ; ══════════════════════════════════════════════════════════════
 ShowPage2() {
     global gKeyCombo
 
-    g := Gui("+AlwaysOnTop -Resize", "Setup — paste-screenshot-in-terminal")
+    g := Gui("+AlwaysOnTop -Resize", "Setup - paste-screenshot-in-terminal")
     g.SetFont("s10", "Segoe UI")
     g.BackColor := "FFFFFF"
     g.MarginX := 0
@@ -94,7 +94,7 @@ ShowPage2() {
 
     ; ── Body
     g.SetFont("s10 w600 c1a1a2e", "Segoe UI")
-    g.Add("Text", "x24 y90", "Step 2 of 4 — Choose your hotkey")
+    g.Add("Text", "x24 y90", "Step 2 of 4 - Choose your hotkey")
     g.SetFont("s10 w400 c333333", "Segoe UI")
     g.Add("Text", "x24 y115 w452", "Click the field below and press the key combination you want to use.")
 
@@ -123,12 +123,12 @@ ShowPage2() {
 }
 
 ; ══════════════════════════════════════════════════════════════
-;  PAGE 3 — Folder picker
+;  PAGE 3 - Folder picker
 ; ══════════════════════════════════════════════════════════════
 ShowPage3() {
     global gSaveFolder
 
-    g := Gui("+AlwaysOnTop -Resize", "Setup — paste-screenshot-in-terminal")
+    g := Gui("+AlwaysOnTop -Resize", "Setup - paste-screenshot-in-terminal")
     g.SetFont("s10", "Segoe UI")
     g.BackColor := "FFFFFF"
     g.MarginX := 0
@@ -143,7 +143,7 @@ ShowPage3() {
 
     ; ── Body
     g.SetFont("s10 w600 c1a1a2e", "Segoe UI")
-    g.Add("Text", "x24 y90", "Step 3 of 4 — Save folder")
+    g.Add("Text", "x24 y90", "Step 3 of 4 - Save folder")
     g.SetFont("s10 w400 c333333", "Segoe UI")
     g.Add("Text", "x24 y115 w452", "Images are saved here temporarily each time you use the hotkey. You can clear this folder anytime.")
 
@@ -172,7 +172,7 @@ PickFolder(editCtrl) {
 }
 
 ; ══════════════════════════════════════════════════════════════
-;  PAGE 4 — Interactive test
+;  PAGE 4 - Interactive test
 ; ══════════════════════════════════════════════════════════════
 ShowPage4() {
     global gKeyCombo, gSaveFolder, gConfigFile, gScriptMain, gAhkExe
@@ -187,7 +187,7 @@ ShowPage4() {
     if (gAhkExe != "" && FileExist(gScriptMain))
         Run('"' gAhkExe '" "' gScriptMain '"')
 
-    g := Gui("+AlwaysOnTop -Resize", "Setup — paste-screenshot-in-terminal")
+    g := Gui("+AlwaysOnTop -Resize", "Setup - paste-screenshot-in-terminal")
     g.SetFont("s10", "Segoe UI")
     g.BackColor := "FFFFFF"
     g.MarginX := 0
@@ -202,7 +202,7 @@ ShowPage4() {
 
     ; ── Body
     g.SetFont("s10 w600 c1a1a2e", "Segoe UI")
-    g.Add("Text", "x24 y90", "Step 4 of 4 — Test it!")
+    g.Add("Text", "x24 y90", "Step 4 of 4 - Test it!")
 
     ; Instructions
     g.SetFont("s10 w400 c333333", "Segoe UI")
@@ -244,7 +244,7 @@ CheckTest(editCtrl, statusCtrl) {
 }
 
 ; ══════════════════════════════════════════════════════════════
-;  Key capture handler (global — used by ShowPage2)
+;  Key capture handler (global - used by ShowPage2)
 ; ══════════════════════════════════════════════════════════════
 KeyCaptureHandler(wParam, lParam, msg, hwnd) {
     global gKeyCombo, gKeyBadge, gCaptureBox
