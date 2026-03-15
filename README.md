@@ -11,8 +11,7 @@ Built for [Claude Code](https://claude.ai/code) users and anyone who works with 
 [![AutoHotkey v2](https://img.shields.io/badge/AutoHotkey-v2-334455?logo=autohotkey)](https://www.autohotkey.com/)
 [![Latest Release](https://img.shields.io/github/v/release/felipemnds/paste-screenshot-in-terminal?color=success)](https://github.com/felipemnds/paste-screenshot-in-terminal/releases/latest)
 
-<!-- Add a demo GIF here after recording. Recommended tool: ShareX or LICEcap -->
-<!-- ![Demo](docs/demo.gif) -->
+![Demo](docs/demo.gif)
 
 </div>
 
