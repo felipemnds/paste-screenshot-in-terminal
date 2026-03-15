@@ -7,6 +7,11 @@ config.ini
 # Research files
 .firecrawl/
 
+# PyInstaller build artifacts
+dist/
+build/
+*.spec
+
 # Design references and media
 design-refs/
 *.mp4
